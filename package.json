@@ -1,7 +1,7 @@
 {
   "homepage": "https://arinoid.github.io/react-password",
   "name": "react-password",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "crypto-js": "^3.1.9-1",
@@ -9,13 +9,19 @@
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "npm-run-all": "^4.1.2",
+    "node-sass": "^4.7.2"
   },
   "scripts": {
+    "build-css": "node-sass src -o src",
+    "watch-css": "npm run build-css && node-sass -rw src -o src",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

@@ -10,7 +10,7 @@ class Pin extends Component {
         return (
             <div className="Pin">
                 <label htmlFor="pin">PIN</label>
-                <input id="pin" type="password" onChange={this.handleChange}/>
+                <input id="pin" type="password" onChange={this.handleChange} value={this.props.value}/>
             </div>
         )
     }
@@ -18,6 +18,7 @@ class Pin extends Component {
 
 Pin.propTypes = {
     textChange: PropTypes.func,
+    value: PropTypes.string,
 };
 
 export default Pin

@@ -10,7 +10,7 @@ class Domain extends Component {
         return (
             <div className="Domain">
                 <label htmlFor="domain">Domain</label>
-                <input id="domain" type="text" onChange={this.handleChange}/>
+                <input id="domain" type="text" onChange={this.handleChange} value={this.props.value}/>
             </div>
         )
     }
@@ -18,6 +18,7 @@ class Domain extends Component {
 
 Domain.propTypes = {
     textChange: PropTypes.func,
+    value: PropTypes.string,
 }
 
 export default Domain

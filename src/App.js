@@ -47,8 +47,8 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Domain textChange={this.handleDomainChange}/>
-                <Pin textChange={this.handlePinChange}/>
+                <Domain textChange={this.handleDomainChange} value={this.state.domain}/>
+                <Pin textChange={this.handlePinChange} value={this.state.pin}/>
                 <button onClick={this.handleGenerateClick}>Generate</button>
                 <button onClick={this.handleClearClick}>Clear</button>
                 <Password password={this.state.password}/>
